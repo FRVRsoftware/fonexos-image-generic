@@ -12,8 +12,8 @@ FROM quay.io/fedora/fedora-silverblue:44
 # 1. Ghostty
 # Idea/Author: Kevin D.
 RUN dnf -y remove ptyxis
-RUN dnf copr enable scottames/ghostty \ 
-    dnf -y install ghostty 
+RUN dnf copr enable scottames/ghostty 
+RUN dnf -y install ghostty 
 
 # 2. Cachy Kernel
 # Idea/Author: Kevin D.
