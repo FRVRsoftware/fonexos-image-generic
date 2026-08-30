@@ -11,14 +11,14 @@ FROM quay.io/fedora/fedora-silverblue:44
 
 # 1. Ghostty
 # Idea/Author: Kevin D.
-RUN dnf remove ptyxis
-RUN dnf copr enable scottames/ghostty \ 
-    dnf install ghostty
+RUN dnf -y remove ptyxis
+RUN dnf -y copr enable scottames/ghostty \ 
+    dnf -y install ghostty 
 
 # 2. Cachy Kernel
 # Idea/Author: Kevin D.
 RUN sudo dnf copr enable bieszczaders/kernel-cachyos 
-RUN sudo dnf install kernel-cachyos-lts kernel-cachyos-lts-devel-matched libdnf5-plugin-actions
+RUN sudo dnf -y install kernel-cachyos-lts kernel-cachyos-lts-devel-matched libdnf5-plugin-actions
 RUN sudo setsebool -P domain_kernel_load_modules on
 
 # 3. Enable aterisks when typing password (sudo)
