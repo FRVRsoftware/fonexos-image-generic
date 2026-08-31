@@ -17,8 +17,7 @@ RUN dnf -y install ghostty
 
 # 2. Cachy Kernel
 # Idea/Author: Kevin D.
-RUN sudo dnf copr enable bieszczaders/kernel-cachyos 
-RUN sudo dnf -y update
+RUN sudo wget -P /etc/yum.repos.d/ https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-$(rpm -E %fedora)/bieszczaders-kernel-cachyos-fedora-$(rpm -E %fedora).repo
 RUN sudo dnf -y install kernel-cachyos-lts kernel-cachyos-lts-devel-matched libdnf5-plugin-actions
 RUN sudo setsebool -P domain_kernel_load_modules on
 
