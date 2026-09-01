@@ -6,6 +6,9 @@ COPY system_files /system_files
 # Base Image
 FROM quay.io/fedora/fedora-silverblue:44   
 
+## ⚠ DISCLAIMER:
+## Maintainers, do not vibecode.
+
 # Modifications for FonexOS.
 # Generic, last modified: Aug, 
 
@@ -17,9 +20,7 @@ RUN dnf -y install ghostty
 
 # 2. Cachy Kernel
 # Idea/Author: Kevin D.
-RUN sudo wget -P /etc/yum.repos.d/ https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-$(rpm -E %fedora)/bieszczaders-kernel-cachyos-fedora-$(rpm -E %fedora).repo
-RUN sudo dnf -y install kernel-cachyos-lts kernel-cachyos-lts-devel-matched libdnf5-plugin-actions
-RUN sudo setsebool -P domain_kernel_load_modules on
+# Currently disabled.
 
 # 3. Enable aterisks when typing password (sudo)
 # Idea/Author: Kevin D.
