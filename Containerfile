@@ -4,7 +4,7 @@ COPY build_files /
 COPY system_files /system_files
 
 # Base Image
-FROM quay.io/fedora/fedora-silverblue:44   
+FROM quay.io/fedora/fedora-silverblue:45  
 
 ## ⚠ DISCLAIMER:
 ## Maintainers, do not vibecode.
